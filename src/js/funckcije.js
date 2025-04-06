@@ -133,7 +133,42 @@ function laplec(data, s, v) {
 }
 
 function sobel(data, s, v) {
-	matrikaNaSliko(data, s, v, [[1, 0, -1], [2, 0, -2], [1, 0, -1]]);
+    let original = [...data];
+    let gxKernel = [
+        [-1, 0, 1],
+        [-2, 0, 2],
+        [-1, 0, 1]
+    ]; 
+    let gyKernel = [
+        [-1, -2, -1],
+        [0, 0, 0],
+        [1, 2, 1]
+    ]; 
+
+    for (let i = 1; i < v - 1; i++) {
+        for (let j = 1; j < s - 1; j++) {
+            let sumX = [0, 0, 0];
+            let sumY = [0, 0, 0];
+
+            
+            for (let y = -1; y <= 1; y++) {
+                for (let x = -1; x <= 1; x++) {
+                    let piksl = getPixel(original, j + x, i + y, s, v);
+                    for (let b = 0; b < 3; b++) {
+                        sumX[b] += piksl.data[b] * gxKernel[y + 1][x + 1];
+                        sumY[b] += piksl.data[b] * gyKernel[y + 1][x + 1];
+                    }
+                }
+            }
+
+            let piksll = getPixel(original, j, i, s, v);
+            for (let b = 0; b < 3; b++) {
+                let magnitude = Math.sqrt(sumX[b] ** 2 + sumY[b] ** 2);
+                data[piksll.i + b] = Math.min(255, magnitude); 
+            }
+        }
+    }
+	greyscale(data); // dadmo sliko v greyscale ker je za ta filter značilen črno-beli efekt
 }
 
 function ostrenje(data, s, v) {
