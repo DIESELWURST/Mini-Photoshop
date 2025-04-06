@@ -26,7 +26,7 @@ document.getElementById("tresh").addEventListener("click", () => {
     posodobiHistogram(histogramVrednosti);
 });
 
-document.getElementById("odstrani-r").addEventListener("click", () => {
+document.getElementById("odstrani-rdece").addEventListener("click", () => {
     shraniSliko(); 
     let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
     let data = imgData.data;
@@ -38,7 +38,7 @@ document.getElementById("odstrani-r").addEventListener("click", () => {
     posodobiHistogram(histogramVrednosti);
 });
 
-document.getElementById("odstrani-g").addEventListener("click", () => {
+document.getElementById("odstrani-zeleno").addEventListener("click", () => {
     shraniSliko(); 
     let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
     let data = imgData.data;
@@ -50,7 +50,7 @@ document.getElementById("odstrani-g").addEventListener("click", () => {
     posodobiHistogram(histogramVrednosti);
 });
 
-document.getElementById("odstrani-b").addEventListener("click", () => {
+document.getElementById("odstrani-modro").addEventListener("click", () => {
     shraniSliko(); 
     let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
     let data = imgData.data;
@@ -62,12 +62,12 @@ document.getElementById("odstrani-b").addEventListener("click", () => {
     posodobiHistogram(histogramVrednosti);
 });
 
-document.getElementById("pud-r").addEventListener("click", () => {
+document.getElementById("spremeni_rdece").addEventListener("click", () => {
     shraniSliko(); 
     let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
     let data = imgData.data;
 
-    poudarikanal(data, 0, Number(document.getElementById("pud-s-r").value));
+    poudarikanal(data, 0, Number(document.getElementById("rdeca").value));
 
     imgData.data = data;
     ctx.putImageData(imgData, 0, 0);
