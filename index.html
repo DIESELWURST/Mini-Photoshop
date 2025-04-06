@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spletni Photoshop</title>
+    <link rel="stylesheet" href="src/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="top-meni">
+            <label for="upload" class="top-gumb">Slika</label>
+            <input type="file" id="upload" hidden>
+            <button id="download" class="top-gumb">Shrani</button>
+            <button class="top-gumb" id="undo"><img src="src/photos/undo.jpg" height="30px"></button>
+            <button class="top-gumb" id="redo"><img src="src/photos/redo.jpg" height="30px"></button>
+    </div>
+    <div class="container">
+        <!-- Sidebar for operations -->
+        <div class="sidebar">
+
+            <fieldset class="sidebar-shift">
+                <legend>Funkcije</legend>
+                <button id="gray">Pretvori v sivine</button>
+                <label for="tresh-slider">Treshold:</label>
+                <input type="range" min="0" max="255" value="128" id="tresh-slider">
+                <button id="tresh">Uporabi</button>
+                <button id="odstrani-r">Odstrani rdečo</button>
+                <button id="odstrani-g">Odstrani zeleno</button>
+                <button id="odstrani-b">Odstrani modro</button>
+                <fieldset class="sidebar-shift">
+                    <legend>Poudarjanje kanalov</legend>
+                    <input type="range" min="0" max="2" value="1" step="0.1" id="pud-s-r" class="slider rdeca">
+                    <button id="pud-r">Rdeča</button><br>
+                    <input type="range" min="0" max="2" value="1" step="0.1" id="zelena" class="slider zelen">
+                    <button id="spremeni_zeleno">Zelena</button><br>
+                    <input type="range" min="0" max="2" value="1" step="0.1" id="modra" class="slider modra">
+                    <button id="spremeni_modro">Modra</button><br>
+                </fieldset>
+                <label for="svetlost-slider" >Svetlost:</label>
+                <input type="range" min="-10" max="10" value="0" id="svetlost-slider">
+                <button id="svetlost">Uporabi</button>
+                <button id="box">Box</button>
+                <button id="gaus">Gaus</button>
+                <button id="sobel">Sobel</button>
+                <button id="laplac">Laplac</button>
+                <button id="ostr">Ostrenje</button>
+                <button id="neostr">Neostrenje</button>
+            </fieldset>
+        </div>
+
+        <!-- Canvas container -->
+        <div class="canvas-container">
+            <canvas id="slika"></canvas>
+            <div class="histogram">
+                <fieldset style="max-width: 600px;">
+                    <legend>Histogram</legend>
+                    <canvas id="rdec" style="width: 600px; display: block; box-sizing: border-box; height: 300px;" width="750" height="375"></canvas>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+
+    <script src="src/js/deligiranje_s_sliko.js"></script>
+    <script src="src/js/ui.js"></script>
+    <script src="src/js/funckcije.js"></script>
+    <script src="src/js/histogram.js"></script>
+</body>
+</html>

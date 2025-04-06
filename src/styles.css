@@ -1,0 +1,255 @@
+html,body{
+    height: 100vh;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #2c2c2c;
+    color: #fff;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    color: #f0f0f0;
+}
+
+.top-meni {
+    height: 38px;
+    margin:0;
+    padding: 0;
+    background-color:#202225;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.127);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+
+.top-gumb {
+    display: inline-block;
+    height: 20px;
+    margin: 0px 10px;
+    background-color: #202225;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s;
+    font-size: 16px;
+}
+
+.custom-upload-button:hover {
+    background-color: #777;
+}
+
+
+#undo {
+    margin-left: 35px;
+}
+#slika {
+    width: 50%;
+    height: auto;
+    border: solid black 1px;
+    align-self: center;
+    margin: 0 auto;
+}
+
+img {
+    margin-top: -5px;
+}
+
+
+
+input[type="file"] {
+    display: none;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+}
+
+.sidebar {
+    width: 16%;
+    background-color: #292C31;
+    padding: 10px 32px;
+    height: 92.5vh;
+    border-right:1px solid rgba(17, 15, 15, 0.896);
+}
+
+.sidebar fieldset {
+    border: 1px solid #555;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.sidebar legend {
+    color: #f0f0f0;
+    font-weight: bold;
+}
+
+.sidebar button {
+    width: 100%;
+    height: 23.5px;
+    margin: 4px 0;
+    text-align: center;
+    background-color: #555;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.sidebar button:hover {
+    background-color: #777;
+}
+
+.sidebar input[type="range"] {
+    width: 100%;
+}
+
+.sidebar-shift {
+    margin-top:15px;
+}
+
+#svetlost-slider {
+    margin-top: -100px;
+}
+
+
+.canvas-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #171719;
+}
+
+#slika {
+    max-width: 90%;
+    max-height: 50vh;
+    border: 1px solid #555;
+    background-color: #fff;
+}
+
+
+
+/* S tem preprečimo, da moder krogec na sliderju ne povozi zeljenega stila */
+.slider {
+    -webkit-appearance: none; /* za WebKit brskalnike */
+    appearance: none; 
+    width: 100%;
+    background: transparent; /* skrijemo default settinge */
+}
+
+/* WebKit brskalniki (Chrome, Safari, Edge) */
+.slider::-webkit-slider-runnable-track {
+    background: #2b6e29; /* Track color */
+    height: 10px;
+    border-radius: 5px;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    background: white; /* Barva krogca  */
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin-top: -3px; 
+}
+
+
+/* za Frirefox */
+.slider::-moz-range-thumb {
+    background: white; 
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin-top: -3px;
+}
+#zelen {
+    background: #2b6e29;
+}
+#spremeni_zeleno:hover {
+    background-color: #2b6e29;	
+}
+
+
+#rdeca {
+    background: #ae0001; 
+}
+
+#pud-r:hover {
+    background-color: #ae0001; 
+}
+
+.slider.rdeca::-webkit-slider-runnable-track {
+    background: #ae0001; 
+}
+
+.slider.rdeca::-webkit-slider-thumb {
+    background: white; 
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin-top: -3px;
+}
+
+.slider.rdeca::-moz-range-thumb {
+    background: white; 
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin-top: -3px;
+}
+
+
+#modra {
+    background: #260fd7; 
+}
+
+#pud-b:hover {
+    background-color: #260fd7; 
+}
+
+.slider.modra::-webkit-slider-runnable-track {
+    background: #260fd7; 
+}
+
+.slider.modra::-webkit-slider-thumb {
+    background: white; 
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin-top: -3px;
+}
+
+.slider.modr::-moz-range-thumb {
+    background: white; 
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin-top: -3px;
+}
+
+.histogram {
+    margin-top: 6px;
+    margin-left:-10px;
+    padding-left: 10px;
+    border-radius: 8px;
+}
+
+.histogram canvas {
+    color:#171719;
+    display: block;
+    margin: 0 auto;
+}
+
